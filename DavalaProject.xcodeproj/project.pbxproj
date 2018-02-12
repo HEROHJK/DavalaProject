@@ -7,11 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		064884795D146AC516568E48 /* Pods_DavalaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA09DA2D53EB3DB51F0DE99 /* Pods_DavalaProject.framework */; };
 		249F858D20175B77006BF2B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F858C20175B77006BF2B1 /* AppDelegate.swift */; };
 		249F858F20175B77006BF2B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F858E20175B77006BF2B1 /* ViewController.swift */; };
 		249F859220175B77006BF2B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 249F859020175B77006BF2B1 /* Main.storyboard */; };
 		249F859420175B77006BF2B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 249F859320175B77006BF2B1 /* Assets.xcassets */; };
 		249F859720175B77006BF2B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 249F859520175B77006BF2B1 /* LaunchScreen.storyboard */; };
+		B247F9D8201A11620031F9FE /* ReviewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247F9D7201A11620031F9FE /* ReviewFeedViewController.swift */; };
+		B247F9E3201A1FAE0031F9FE /* ReviewFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247F9E2201A1FAE0031F9FE /* ReviewFeedCell.swift */; };
+		B247F9E5201A1FE00031F9FE /* ReviewFeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247F9E4201A1FDF0031F9FE /* ReviewFeedData.swift */; };
+		B2EDA738202340C300BD507B /* tab_bottom_find.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA733202340C300BD507B /* tab_bottom_find.png */; };
+		B2EDA739202340C300BD507B /* tab_bottom_list.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA734202340C300BD507B /* tab_bottom_list.png */; };
+		B2EDA73A202340C300BD507B /* tab_bottom_private.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA735202340C300BD507B /* tab_bottom_private.png */; };
+		B2EDA73B202340C300BD507B /* tab_bottom_review.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA736202340C300BD507B /* tab_bottom_review.png */; };
+		B2EDA73C202340C300BD507B /* tab_bottom_home.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA737202340C300BD507B /* tab_bottom_home.png */; };
+		B2EDA73E20234D3300BD507B /* navi_cart.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA73D20234D3200BD507B /* navi_cart.png */; };
+		B2EDA7432023678100BD507B /* AppUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA7422023678100BD507B /* AppUrl.swift */; };
+		B2EDA745202367F600BD507B /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA744202367F600BD507B /* ErrorMessages.swift */; };
+		B2EDA75520236CD500BD507B /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA75320236CD400BD507B /* TableDataSource.swift */; };
+		B2EDA75620236CD500BD507B /* TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA75420236CD500BD507B /* TableDelegate.swift */; };
+		B2EDA7582023704000BD507B /* ReviewFeedListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA7572023704000BD507B /* ReviewFeedListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +37,26 @@
 		249F859320175B77006BF2B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		249F859620175B77006BF2B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		249F859820175B77006BF2B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D2F281061C03163C76FFE33 /* Pods-DavalaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DavalaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DavalaProject/Pods-DavalaProject.debug.xcconfig"; sourceTree = "<group>"; };
+		8BA09DA2D53EB3DB51F0DE99 /* Pods_DavalaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DavalaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F4D957B78743E09EAE4DCAF /* Pods-DavalaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DavalaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-DavalaProject/Pods-DavalaProject.release.xcconfig"; sourceTree = "<group>"; };
+		B247F9D7201A11620031F9FE /* ReviewFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedViewController.swift; sourceTree = "<group>"; };
+		B247F9DA201A1C630031F9FE /* DavalaProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DavalaProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		B247F9E2201A1FAE0031F9FE /* ReviewFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedCell.swift; sourceTree = "<group>"; };
+		B247F9E4201A1FDF0031F9FE /* ReviewFeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedData.swift; sourceTree = "<group>"; };
+		B2EDA733202340C300BD507B /* tab_bottom_find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_find.png; path = ../../../Downloads/tab_bottom_find.png; sourceTree = "<group>"; };
+		B2EDA734202340C300BD507B /* tab_bottom_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_list.png; path = ../../../Downloads/tab_bottom_list.png; sourceTree = "<group>"; };
+		B2EDA735202340C300BD507B /* tab_bottom_private.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_private.png; path = ../../../Downloads/tab_bottom_private.png; sourceTree = "<group>"; };
+		B2EDA736202340C300BD507B /* tab_bottom_review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_review.png; path = ../../../Downloads/tab_bottom_review.png; sourceTree = "<group>"; };
+		B2EDA737202340C300BD507B /* tab_bottom_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_home.png; path = ../../../Downloads/tab_bottom_home.png; sourceTree = "<group>"; };
+		B2EDA73D20234D3200BD507B /* navi_cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navi_cart.png; path = ../../../Downloads/navi_cart.png; sourceTree = "<group>"; };
+		B2EDA7422023678100BD507B /* AppUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUrl.swift; sourceTree = "<group>"; };
+		B2EDA744202367F600BD507B /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		B2EDA74C2023693B00BD507B /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		B2EDA74D2023693B00BD507B /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B2EDA75320236CD400BD507B /* TableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		B2EDA75420236CD500BD507B /* TableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDelegate.swift; sourceTree = "<group>"; };
+		B2EDA7572023704000BD507B /* ReviewFeedListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064884795D146AC516568E48 /* Pods_DavalaProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +74,11 @@
 		249F858020175B76006BF2B1 = {
 			isa = PBXGroup;
 			children = (
+				B247F9D9201A12E70031F9FE /* Resources */,
 				249F858B20175B77006BF2B1 /* DavalaProject */,
 				249F858A20175B77006BF2B1 /* Products */,
+				62C17948EDFF6F33A6ECC7B8 /* Pods */,
+				35C319964A2109499286567E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +93,135 @@
 		249F858B20175B77006BF2B1 /* DavalaProject */ = {
 			isa = PBXGroup;
 			children = (
+				B247F9DA201A1C630031F9FE /* DavalaProject-Bridging-Header.h */,
 				249F858C20175B77006BF2B1 /* AppDelegate.swift */,
-				249F858E20175B77006BF2B1 /* ViewController.swift */,
-				249F859020175B77006BF2B1 /* Main.storyboard */,
-				249F859320175B77006BF2B1 /* Assets.xcassets */,
-				249F859520175B77006BF2B1 /* LaunchScreen.storyboard */,
-				249F859820175B77006BF2B1 /* Info.plist */,
+				B2EDA74A202368DB00BD507B /* Assets and Configuration */,
+				B2EDA74B2023692200BD507B /* Helpers */,
+				B2EDA7412023676400BD507B /* Enums */,
+				B2EDA74E20236B0A00BD507B /* Model */,
+				B2EDA7462023682400BD507B /* View Controllers */,
+				B2EDA74F20236B0E00BD507B /* View Model */,
+				B2EDA749202368A000BD507B /* Views */,
 			);
 			path = DavalaProject;
+			sourceTree = "<group>";
+		};
+		35C319964A2109499286567E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BA09DA2D53EB3DB51F0DE99 /* Pods_DavalaProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62C17948EDFF6F33A6ECC7B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F281061C03163C76FFE33 /* Pods-DavalaProject.debug.xcconfig */,
+				8F4D957B78743E09EAE4DCAF /* Pods-DavalaProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B247F9D9201A12E70031F9FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2EDA73D20234D3200BD507B /* navi_cart.png */,
+				B2EDA733202340C300BD507B /* tab_bottom_find.png */,
+				B2EDA737202340C300BD507B /* tab_bottom_home.png */,
+				B2EDA734202340C300BD507B /* tab_bottom_list.png */,
+				B2EDA735202340C300BD507B /* tab_bottom_private.png */,
+				B2EDA736202340C300BD507B /* tab_bottom_review.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B2EDA7412023676400BD507B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B2EDA7422023678100BD507B /* AppUrl.swift */,
+				B2EDA744202367F600BD507B /* ErrorMessages.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B2EDA7462023682400BD507B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				249F858E20175B77006BF2B1 /* ViewController.swift */,
+				B2EDA7472023684E00BD507B /* ReviewFeed List */,
+				B2EDA7482023686900BD507B /* ReviewFeed Detail */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B2EDA7472023684E00BD507B /* ReviewFeed List */ = {
+			isa = PBXGroup;
+			children = (
+				B247F9D7201A11620031F9FE /* ReviewFeedViewController.swift */,
+				B247F9E2201A1FAE0031F9FE /* ReviewFeedCell.swift */,
+			);
+			path = "ReviewFeed List";
+			sourceTree = "<group>";
+		};
+		B2EDA7482023686900BD507B /* ReviewFeed Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ReviewFeed Detail";
+			sourceTree = "<group>";
+		};
+		B2EDA749202368A000BD507B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				249F859020175B77006BF2B1 /* Main.storyboard */,
+				249F859520175B77006BF2B1 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B2EDA74A202368DB00BD507B /* Assets and Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				249F859320175B77006BF2B1 /* Assets.xcassets */,
+				249F859820175B77006BF2B1 /* Info.plist */,
+			);
+			path = "Assets and Configuration";
+			sourceTree = "<group>";
+		};
+		B2EDA74B2023692200BD507B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B2EDA75220236CAC00BD507B /* SWRevealViewController */,
+				B2EDA75320236CD400BD507B /* TableDataSource.swift */,
+				B2EDA75420236CD500BD507B /* TableDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B2EDA74E20236B0A00BD507B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B247F9E4201A1FDF0031F9FE /* ReviewFeedData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2EDA74F20236B0E00BD507B /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2EDA7572023704000BD507B /* ReviewFeedListController.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		B2EDA75220236CAC00BD507B /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B2EDA74D2023693B00BD507B /* SWRevealViewController.h */,
+				B2EDA74C2023693B00BD507B /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 249F859B20175B77006BF2B1 /* Build configuration list for PBXNativeTarget "DavalaProject" */;
 			buildPhases = (
+				B8BC71E6964216F0F0D34826 /* [CP] Check Pods Manifest.lock */,
 				249F858520175B77006BF2B1 /* Sources */,
 				249F858620175B77006BF2B1 /* Frameworks */,
 				249F858720175B77006BF2B1 /* Resources */,
+				E581004EF7D60790494B686C /* [CP] Embed Pods Frameworks */,
+				E9752FC399712F5EE0843E13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +259,7 @@
 				TargetAttributes = {
 					249F858820175B77006BF2B1 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,20 +288,92 @@
 			buildActionMask = 2147483647;
 			files = (
 				249F859720175B77006BF2B1 /* LaunchScreen.storyboard in Resources */,
+				B2EDA73C202340C300BD507B /* tab_bottom_home.png in Resources */,
+				B2EDA73E20234D3300BD507B /* navi_cart.png in Resources */,
+				B2EDA738202340C300BD507B /* tab_bottom_find.png in Resources */,
+				B2EDA73A202340C300BD507B /* tab_bottom_private.png in Resources */,
+				B2EDA73B202340C300BD507B /* tab_bottom_review.png in Resources */,
 				249F859420175B77006BF2B1 /* Assets.xcassets in Resources */,
+				B2EDA739202340C300BD507B /* tab_bottom_list.png in Resources */,
 				249F859220175B77006BF2B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B8BC71E6964216F0F0D34826 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DavalaProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E581004EF7D60790494B686C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DavalaProject/Pods-DavalaProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DavalaProject/Pods-DavalaProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9752FC399712F5EE0843E13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DavalaProject/Pods-DavalaProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		249F858520175B77006BF2B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B247F9D8201A11620031F9FE /* ReviewFeedViewController.swift in Sources */,
+				B247F9E5201A1FE00031F9FE /* ReviewFeedData.swift in Sources */,
 				249F858F20175B77006BF2B1 /* ViewController.swift in Sources */,
+				B2EDA7432023678100BD507B /* AppUrl.swift in Sources */,
 				249F858D20175B77006BF2B1 /* AppDelegate.swift in Sources */,
+				B2EDA745202367F600BD507B /* ErrorMessages.swift in Sources */,
+				B247F9E3201A1FAE0031F9FE /* ReviewFeedCell.swift in Sources */,
+				B2EDA75620236CD500BD507B /* TableDelegate.swift in Sources */,
+				B2EDA75520236CD500BD507B /* TableDataSource.swift in Sources */,
+				B2EDA7582023704000BD507B /* ReviewFeedListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,13 +508,18 @@
 		};
 		249F859C20175B77006BF2B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D2F281061C03163C76FFE33 /* Pods-DavalaProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DavalaProject/Info.plist;
+				DEVELOPMENT_TEAM = 89V98CZQGR;
+				INFOPLIST_FILE = "$(SRCROOT)/DavalaProject/Assets and Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.herohjk.DavalaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DavalaProject/DavalaProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,13 +527,17 @@
 		};
 		249F859D20175B77006BF2B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F4D957B78743E09EAE4DCAF /* Pods-DavalaProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DavalaProject/Info.plist;
+				DEVELOPMENT_TEAM = 89V98CZQGR;
+				INFOPLIST_FILE = "$(SRCROOT)/DavalaProject/Assets and Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.herohjk.DavalaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DavalaProject/DavalaProject-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
