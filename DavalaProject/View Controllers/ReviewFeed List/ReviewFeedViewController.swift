@@ -35,10 +35,13 @@ class ReviewFeedViewController: UIViewController {
     }
     
     func configureTableView() {
+        print("configureTableView")
         tableDS = TableDataSource(cellID: ReviewFeedCell.CELL_ID, data: listCtrl.reviewFeeds) {
             cell, model in
-            
-            cell.reviewTitle.text = model.subject
+            cell.reviewTitle.text = model.title
+            cell.reviewRegistedDate.text = model.updatedtime
+            cell.reviewContent.text = model.content
+            cell.reviewWriter.text = model.writer
         }
         
         tableDelegate = TableDelegate(listDelegate: self)
@@ -48,7 +51,14 @@ class ReviewFeedViewController: UIViewController {
         reviewFeedTable.reloadData()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //pass selected athlete object to details page
+        if segue.identifier == DETAILS_SEQUE {
+            let index = sender as! Int
+            let detailsVC = segue.destination as! ReviewFeedDetailViewController
+//            detailsVC.stateCtrl = AthleteDetailsStateController(athlete: stateCtrl.athletes[index])
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +68,7 @@ class ReviewFeedViewController: UIViewController {
 }
 
 //MARK:- List Views Delegate Methods
-extension ReviewFeedViewController: ListViewsDelegate{
+extension ReviewFeedViewController: ListViewsDelegate {
     func didSelectItemAt(index: Int) {
         self.performSegue(withIdentifier: DETAILS_SEQUE, sender: index)
     }
