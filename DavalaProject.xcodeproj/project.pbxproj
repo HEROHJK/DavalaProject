@@ -46,12 +46,12 @@
 		B247F9DA201A1C630031F9FE /* DavalaProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DavalaProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		B247F9E2201A1FAE0031F9FE /* ReviewFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedCell.swift; sourceTree = "<group>"; };
 		B247F9E4201A1FDF0031F9FE /* ReviewFeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedData.swift; sourceTree = "<group>"; };
-		B2EDA733202340C300BD507B /* tab_bottom_find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_find.png; path = ../../../Downloads/tab_bottom_find.png; sourceTree = "<group>"; };
-		B2EDA734202340C300BD507B /* tab_bottom_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_list.png; path = ../../../Downloads/tab_bottom_list.png; sourceTree = "<group>"; };
-		B2EDA735202340C300BD507B /* tab_bottom_private.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_private.png; path = ../../../Downloads/tab_bottom_private.png; sourceTree = "<group>"; };
-		B2EDA736202340C300BD507B /* tab_bottom_review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_review.png; path = ../../../Downloads/tab_bottom_review.png; sourceTree = "<group>"; };
-		B2EDA737202340C300BD507B /* tab_bottom_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_home.png; path = ../../../Downloads/tab_bottom_home.png; sourceTree = "<group>"; };
-		B2EDA73D20234D3200BD507B /* navi_cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navi_cart.png; path = ../../../Downloads/navi_cart.png; sourceTree = "<group>"; };
+		B2EDA733202340C300BD507B /* tab_bottom_find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_find.png; path = Resources/tab_bottom_find.png; sourceTree = SOURCE_ROOT; };
+		B2EDA734202340C300BD507B /* tab_bottom_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_list.png; path = Resources/tab_bottom_list.png; sourceTree = SOURCE_ROOT; };
+		B2EDA735202340C300BD507B /* tab_bottom_private.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_private.png; path = Resources/tab_bottom_private.png; sourceTree = SOURCE_ROOT; };
+		B2EDA736202340C300BD507B /* tab_bottom_review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_review.png; path = Resources/tab_bottom_review.png; sourceTree = SOURCE_ROOT; };
+		B2EDA737202340C300BD507B /* tab_bottom_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_home.png; path = Resources/tab_bottom_home.png; sourceTree = SOURCE_ROOT; };
+		B2EDA73D20234D3200BD507B /* navi_cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navi_cart.png; path = Resources/navi_cart.png; sourceTree = SOURCE_ROOT; };
 		B2EDA7422023678100BD507B /* AppUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUrl.swift; sourceTree = "<group>"; };
 		B2EDA744202367F600BD507B /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		B2EDA74C2023693B00BD507B /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -519,6 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89V98CZQGR;
 				INFOPLIST_FILE = "$(SRCROOT)/DavalaProject/Assets and Configuration/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.herohjk.DavalaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -538,6 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89V98CZQGR;
 				INFOPLIST_FILE = "$(SRCROOT)/DavalaProject/Assets and Configuration/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.herohjk.DavalaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
