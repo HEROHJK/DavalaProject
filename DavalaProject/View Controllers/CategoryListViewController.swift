@@ -19,9 +19,6 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let json: CategoryListJSONParser = CategoryListJSONParser()
-        json.onDecodeJSON()
-        
         self.categoryTable.register(UITableViewCell.self , forCellReuseIdentifier: CELL_IDENTIFIER)
         
     }
