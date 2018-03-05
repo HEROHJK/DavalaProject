@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rOD-nj-OKh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rOD-nj-OKh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,14 +29,33 @@
         <!--리스트 컨트롤러-->
         <scene sceneID="HJI-Yl-J7d">
             <objects>
-                <viewController id="hja-c8-ynt" userLabel="리스트 컨트롤러" sceneMemberID="viewController">
+                <viewController id="hja-c8-ynt" userLabel="리스트 컨트롤러" customClass="CategoryListViewController" customModule="DavalaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2YL-6n-s9w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-Hf-CVS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hja-c8-ynt" id="VmF-IC-j5A"/>
+                                    <outlet property="delegate" destination="hja-c8-ynt" id="T0P-rs-ofZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.96859331800000004" blue="0.45076402989999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="MGe-Hf-CVS" firstAttribute="top" secondItem="hte-6W-0Pr" secondAttribute="top" id="M6i-0h-UxJ"/>
+                            <constraint firstItem="hte-6W-0Pr" firstAttribute="bottom" secondItem="MGe-Hf-CVS" secondAttribute="bottom" id="OSU-38-Bj2"/>
+                            <constraint firstItem="MGe-Hf-CVS" firstAttribute="leading" secondItem="hte-6W-0Pr" secondAttribute="leading" id="mr7-0L-2jc"/>
+                            <constraint firstItem="hte-6W-0Pr" firstAttribute="trailing" secondItem="MGe-Hf-CVS" secondAttribute="trailing" id="wVu-lk-UV4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hte-6W-0Pr"/>
                     </view>
                     <navigationItem key="navigationItem" id="0N1-fM-30t"/>
+                    <connections>
+                        <outlet property="categoryTable" destination="MGe-Hf-CVS" id="reY-PT-oJI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGL-oj-Gwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
