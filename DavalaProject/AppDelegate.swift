@@ -7,12 +7,14 @@
 // test
 
 import UIKit
+let itemLoadCount = 20 //아이템을 한번에 몇개 로드 할 것인가 지정하는 상수
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var categoryListMgr: CategoryListMgr = CategoryListMgr()    //카테고리 리스트 관리 객체
+    var itemList:[Item] = [Item]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
