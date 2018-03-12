@@ -137,6 +137,13 @@ class ItemListViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "ProductDetail", bundle: nil)
+        let nextView = storyboard.instantiateInitialViewController()
+        self.present(nextView!, animated: true, completion: nil)
+    }
+    
     func loadMoreData(){
         if isFirst{
             isFirst=false
