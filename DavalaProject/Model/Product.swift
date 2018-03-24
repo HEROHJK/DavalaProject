@@ -12,7 +12,10 @@ class Product {
     var productImageUrl:String!//상품 url
     var subTitle:String!//상품 부가설명
     var title:String!//상품명
-    var price:Int!//상품가격
+    var originPrice:Int!//원래상품가격
+    var salePrice:Int!//할인 상품가격
+    var salePercent:Int!//할인율
+    var shipInfo:String!//무료배송인지 아닌지
     
     //이건 따로 받아오는걸로
     var reviewArray:NSMutableArray!//리뷰피드리스트
