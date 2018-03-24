@@ -7,9 +7,34 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
-class ProductDetailViewModel {    
+class ProductDetailViewModel {
+    var item:Item {
+        get {
+            return self.item
+        }
+        set {
+            self.item = newValue
+        }
+    }
     init() {
     
+    }
+    
+    func getItemDetail(completion: @escaping (_ error: String?)->()) {
+        let urlString = "\(AppURL.server_ip.rawValue)\(AppURL.reviewFeedList.rawValue)"
+        print("urlString \(urlString)")
+        Alamofire
+            .request(urlString, method: .get).responseData {
+                response in
+                guard response.result.isSuccess else {
+                    completion(ErrorMessages.connectionError.rawValue)
+                    return
+                }
+                //self.reviewFeeds = try! ReviewFeedData.initFromArray(json: JSON(data: response.data!))
+                completion(nil)
+        }
     }
 }
