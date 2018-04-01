@@ -277,6 +277,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="wlF-hb-dh6" id="ik6-YJ-Zed"/>
+                                            <outlet property="delegate" destination="wlF-hb-dh6" id="gYx-hz-I8x"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -299,27 +303,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="reviewFeedTable" destination="5B7-0i-5qz" id="w0w-QP-Gbm"/>
-                        <segue destination="mEt-vl-ceC" kind="show" identifier="fromHomeToDetails" action="showDetailViewController:sender:" id="N5n-Vp-k3j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElN-s3-dob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-943.20000000000005" y="546.47676161919048"/>
-        </scene>
-        <!--리뷰 컨트롤러-->
-        <scene sceneID="Jvp-Pm-VOf">
-            <objects>
-                <viewController id="mEt-vl-ceC" userLabel="리뷰 컨트롤러" customClass="ReviewFeedDetailViewController" customModule="DavalaProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NUa-vM-kQa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.96859331800000004" blue="0.45076402989999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="QUH-Wk-ebE"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cza-rG-tvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-215" y="546"/>
         </scene>
         <!--검색 컨트롤러-->
         <scene sceneID="gYn-xw-f9C">

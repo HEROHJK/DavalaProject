@@ -5,14 +5,13 @@
 //  Created by 300만원 on 2018. 3. 6..
 //  Copyright © 2018년 herohjk. All rights reserved.
 //
-
 import UIKit
 import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
 class ItemListViewController: UITableViewController {
-
+    
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var refc: UIRefreshControl!
@@ -138,9 +137,9 @@ class ItemListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let storyboard: UIStoryboard = UIStoryboard(name: "ProductDetail", bundle: nil)
         let nextView = storyboard.instantiateInitialViewController()
+        
         self.present(nextView!, animated: true, completion: nil)
     }
     
@@ -157,5 +156,5 @@ class ItemListViewController: UITableViewController {
         }
         loading=false
     }
-
+    
 }

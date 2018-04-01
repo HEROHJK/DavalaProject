@@ -8,7 +8,16 @@
 
 import UIKit
 
-class ReviewFeedViewController: UIViewController {
+class ReviewFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        return cell
+    }
+    
     
     @IBOutlet weak var reviewFeedTable: UITableView!
     
@@ -34,6 +43,13 @@ class ReviewFeedViewController: UIViewController {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "ReviewFeedDetail", bundle: nil)
+        let nextView = storyboard.instantiateInitialViewController()
+        self.present(nextView!, animated: true, completion: nil)
+    }
+    
+    
     func configureTableView() {
         print("configureTableView")
         tableDS = TableDataSource(cellID: ReviewFeedCell.CELL_ID, data: listCtrl.reviewFeeds) {
@@ -42,6 +58,9 @@ class ReviewFeedViewController: UIViewController {
             cell.reviewRegistedDate.text = model.updatedtime
             cell.reviewContent.text = model.content
             cell.reviewWriter.text = model.writer
+            let url = URL(string: model.imageurl!)
+            let data = try? Data(contentsOf: url!)
+            cell.reviewThumbnail.image = UIImage(data: data!)
         }
         
         tableDelegate = TableDelegate(listDelegate: self)
@@ -56,7 +75,7 @@ class ReviewFeedViewController: UIViewController {
         if segue.identifier == DETAILS_SEQUE {
             let index = sender as! Int
             let detailsVC = segue.destination as! ReviewFeedDetailViewController
-//            detailsVC.stateCtrl = AthleteDetailsStateController(athlete: stateCtrl.athletes[index])
+            //            detailsVC.stateCtrl = AthleteDetailsStateController(athlete: stateCtrl.athletes[index])
         }
     }
     
@@ -73,3 +92,4 @@ extension ReviewFeedViewController: ListViewsDelegate {
         self.performSegue(withIdentifier: DETAILS_SEQUE, sender: index)
     }
 }
+

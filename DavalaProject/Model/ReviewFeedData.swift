@@ -14,30 +14,21 @@ class ReviewFeedData {
     var title         : String?
     var updatedtime   : String?
     var content      : String?
-//    var imageurl         : UIImage?
+    var imageurl         : String?
     var writer        : String?
-//    var like          : Bool?   //Todo : 계정 연동 후 작업 예정
+    //    var like          : Bool?   //Todo : 계정 연동 후 작업 예정
     
     init(fromJson json: JSON!){
         if json.isEmpty{
             return
         }
-        index = json["index"].intValue
-        title = json["title"].stringValue
-        updatedtime = json["updatedtime"].stringValue
-        content = json["content"].stringValue
-        writer = json["writer"].stringValue
-
+        index = json["ProductKey"].intValue
+        title = json["ProductName"].stringValue
+        updatedtime = json["date"].stringValue
+        content = json["comment"].stringValue
+        writer = json["nickname"].stringValue
+        imageurl = json["url"].stringValue
     }
-    
-//    static func initFromObject(json: JSON!)-> Void/*ReviewFeedData*/ {
-//        if json.isEmpty {
-//            print("json is Empty")
-//        }
-//
-//        print("json is \(json.object)")
-//
-//    }
     
     static func initFromArray(json: JSON!)-> [ReviewFeedData] {
         if json.isEmpty {
@@ -45,7 +36,6 @@ class ReviewFeedData {
         }
         
         var reviewFeedDatas = [ReviewFeedData]()
-//        let reviewFeedDataArray = json["reviewFeeds"].arrayValue
         let reviewFeedDataArray = json.arrayValue
         for reviewFeedJson in reviewFeedDataArray {
             let value = ReviewFeedData(fromJson: reviewFeedJson)
@@ -56,3 +46,4 @@ class ReviewFeedData {
     }
     
 }
+

@@ -36,6 +36,8 @@
 		B247F9D8201A11620031F9FE /* ReviewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247F9D7201A11620031F9FE /* ReviewFeedViewController.swift */; };
 		B247F9E3201A1FAE0031F9FE /* ReviewFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247F9E2201A1FAE0031F9FE /* ReviewFeedCell.swift */; };
 		B247F9E5201A1FE00031F9FE /* ReviewFeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247F9E4201A1FDF0031F9FE /* ReviewFeedData.swift */; };
+		B2A59DFC2065DE510049D745 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = B2A59DFB2065DE510049D745 /* like.png */; };
+		B2A59DFE2065DEF50049D745 /* ReviewFeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A59DFD2065DEF50049D745 /* ReviewFeedDetail.storyboard */; };
 		B2EDA738202340C300BD507B /* tab_bottom_find.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA733202340C300BD507B /* tab_bottom_find.png */; };
 		B2EDA739202340C300BD507B /* tab_bottom_list.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA734202340C300BD507B /* tab_bottom_list.png */; };
 		B2EDA73A202340C300BD507B /* tab_bottom_private.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA735202340C300BD507B /* tab_bottom_private.png */; };
@@ -84,6 +86,8 @@
 		B247F9DA201A1C630031F9FE /* DavalaProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DavalaProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		B247F9E2201A1FAE0031F9FE /* ReviewFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedCell.swift; sourceTree = "<group>"; };
 		B247F9E4201A1FDF0031F9FE /* ReviewFeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedData.swift; sourceTree = "<group>"; };
+		B2A59DFB2065DE510049D745 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		B2A59DFD2065DEF50049D745 /* ReviewFeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewFeedDetail.storyboard; sourceTree = "<group>"; };
 		B2EDA733202340C300BD507B /* tab_bottom_find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_find.png; path = Resources/tab_bottom_find.png; sourceTree = SOURCE_ROOT; };
 		B2EDA734202340C300BD507B /* tab_bottom_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_list.png; path = Resources/tab_bottom_list.png; sourceTree = SOURCE_ROOT; };
 		B2EDA735202340C300BD507B /* tab_bottom_private.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bottom_private.png; path = Resources/tab_bottom_private.png; sourceTree = SOURCE_ROOT; };
@@ -231,6 +235,7 @@
 		B247F9D9201A12E70031F9FE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2A59DFB2065DE510049D745 /* like.png */,
 				B2EDA73D20234D3200BD507B /* navi_cart.png */,
 				B2EDA733202340C300BD507B /* tab_bottom_find.png */,
 				B2EDA737202340C300BD507B /* tab_bottom_home.png */,
@@ -286,6 +291,7 @@
 				249F859020175B77006BF2B1 /* Main.storyboard */,
 				249F859520175B77006BF2B1 /* LaunchScreen.storyboard */,
 				9B655A992051163800E59DAC /* ProductDetail.storyboard */,
+				B2A59DFD2065DEF50049D745 /* ReviewFeedDetail.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,11 +414,13 @@
 				B2EDA73E20234D3300BD507B /* navi_cart.png in Resources */,
 				B2EDA738202340C300BD507B /* tab_bottom_find.png in Resources */,
 				B2EDA73A202340C300BD507B /* tab_bottom_private.png in Resources */,
+				B2A59DFE2065DEF50049D745 /* ReviewFeedDetail.storyboard in Resources */,
 				B2EDA73B202340C300BD507B /* tab_bottom_review.png in Resources */,
 				249F859420175B77006BF2B1 /* Assets.xcassets in Resources */,
 				B2EDA739202340C300BD507B /* tab_bottom_list.png in Resources */,
 				249F859220175B77006BF2B1 /* Main.storyboard in Resources */,
 				9B655A9A2051163800E59DAC /* ProductDetail.storyboard in Resources */,
+				B2A59DFC2065DE510049D745 /* like.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BAEBSW672H;
+				DEVELOPMENT_TEAM = 89V98CZQGR;
 				INFOPLIST_FILE = "$(SRCROOT)/DavalaProject/Assets and Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -669,7 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BAEBSW672H;
+				DEVELOPMENT_TEAM = 89V98CZQGR;
 				INFOPLIST_FILE = "$(SRCROOT)/DavalaProject/Assets and Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
