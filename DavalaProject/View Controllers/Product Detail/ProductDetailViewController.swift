@@ -10,7 +10,7 @@ import UIKit
 
 class ProductDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var viewModel: ProductDetailViewModel = ProductDetailViewModel()
-    
+    var index: Int = -1
     
     override func viewDidLoad() {
         print("ProductDetailViewController viewDidLoad")
@@ -21,6 +21,4 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    
 }

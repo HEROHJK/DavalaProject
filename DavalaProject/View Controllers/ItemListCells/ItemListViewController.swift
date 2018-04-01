@@ -27,14 +27,14 @@ class ItemListViewController: UITableViewController {
         refc.attributedTitle = NSAttributedString(string: "새로고침 중...")
         refc.addTarget(self, action: #selector(refresh), for: .valueChanged)
         self.tableView.refreshControl = refc
-        
         Alamofire.request("http://hjknas.asuscomm.com:2323/itemlist2.php").responseSwiftyJSON { dataResponse in
             print(dataResponse.request!)
-            self.appDelegate.itemList = MakeItemList(Json: dataResponse.value!)
+            if dataResponse != nil{
+                self.appDelegate.itemList = MakeItemList(Json: (dataResponse.value)!)
+            }
         }
         sleep(2)
         loadMoreData()
-        
     }
     
     @objc func refresh(sender: AnyObject){
@@ -138,9 +138,9 @@ class ItemListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard: UIStoryboard = UIStoryboard(name: "ProductDetail", bundle: nil)
-        let nextView = storyboard.instantiateInitialViewController()
-        
-        self.present(nextView!, animated: true, completion: nil)
+        let nextView:ProductDetailViewController = storyboard.instantiateInitialViewController() as! ProductDetailViewController
+        nextView.index = indexPath.row
+        self.present(nextView, animated: true, completion: nil)
     }
     
     func loadMoreData(){
