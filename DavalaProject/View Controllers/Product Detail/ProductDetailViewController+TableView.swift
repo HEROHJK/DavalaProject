@@ -54,9 +54,11 @@ extension ProductDetailViewController {
                 break
             case 1:
                 cell = tableView.dequeueReusableCell(withIdentifier: "ProductDetailImageCell") as! ProductDetailTableViewCell
+                
                 break
             case 2:
                 cell = tableView.dequeueReusableCell(withIdentifier: "ProductDetailTitleCell") as! ProductDetailTableViewCell
+                
                 break
             default :
                 break

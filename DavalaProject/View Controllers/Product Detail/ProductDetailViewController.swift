@@ -9,12 +9,17 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var viewModel: ProductDetailViewModel?
+    var viewModel: ProductDetailViewModel = ProductDetailViewModel()
+    
     
     override func viewDidLoad() {
         print("ProductDetailViewController viewDidLoad")
         super.viewDidLoad()
-        self.viewModel = ProductDetailViewModel()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     
