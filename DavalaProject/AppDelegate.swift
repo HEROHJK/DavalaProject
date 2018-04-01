@@ -4,7 +4,7 @@
 //
 //  Created by 300만원 on 2018. 1. 23..
 //  Copyright © 2018년 herohjk. All rights reserved.
-// test
+// test1
 
 import UIKit
 let itemLoadCount = 20 //아이템을 한번에 몇개 로드 할 것인가 지정하는 상수
