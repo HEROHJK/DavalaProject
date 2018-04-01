@@ -16,6 +16,7 @@ let KEY_INDEX = "index"
 class CategoryListJSONParser: NSObject {
     var JSONText: String = ""
     
+    //MARK - Method
     
     func onDecodeJSON(){
         
@@ -25,7 +26,7 @@ class CategoryListJSONParser: NSObject {
                 switch response.result {
                 case .success(_) :
                     if let data = response.result.value {
-
+                        
                         let itemList: Array<AnyObject> = data as! Array<AnyObject>
                         var topItemIndexList: Array<Int> = Array()
                         
@@ -71,16 +72,13 @@ class CategoryListJSONParser: NSObject {
                                 }
                             }
                         }
-                        
-                        
                     }
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NOTIFICATION_FINISH_CATEGORY_PARSING), object: nil)
                     break
-                    
                 case .failure(_):
                     print(response.result.error)
                     break
                 }
-                
             }
         }
     }
