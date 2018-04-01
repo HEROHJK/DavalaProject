@@ -44,11 +44,12 @@ class ItemListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection
-        section: Int)->Int{
+section: Int)->Int{
         let count = self.appDelegate.itemList.count
         
         return count
     }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell{

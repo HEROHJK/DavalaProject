@@ -33,7 +33,6 @@ class ProductDetailViewModel {
                     completion(ErrorMessages.connectionError.rawValue)
                     return
                 }
-                //self.reviewFeeds = try! ReviewFeedData.initFromArray(json: JSON(data: response.data!))
                 completion(nil)
         }
     }

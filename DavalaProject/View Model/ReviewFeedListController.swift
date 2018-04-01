@@ -20,10 +20,6 @@ class ReviewFeedListController {
         print("urlString \(urlString)")
         Alamofire
             .request(urlString, method: .get)
-            //            .responseJSON { response in
-            //                if let JSON = response.result.value {
-            //                    print("JSON: \(JSON)")
-            //                }
             .responseData {
                 response in
                 guard response.result.isSuccess else {
