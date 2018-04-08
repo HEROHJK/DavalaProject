@@ -21,6 +21,8 @@ class ItemListViewController: UITableViewController {
     
     var isFirst:Bool = true
     
+    var categoryName = ""
+    
     //MARK: UIViewController
     
     override func viewDidLoad() {
@@ -30,10 +32,34 @@ class ItemListViewController: UITableViewController {
         refc.attributedTitle = NSAttributedString(string: "새로고침 중...")
         refc.addTarget(self, action: #selector(refresh), for: .valueChanged)
         self.tableView.refreshControl = refc
-        Alamofire.request("http://hjknas.asuscomm.com:2323/itemlist2.php").responseSwiftyJSON { dataResponse in
+        
+    }
+    
+    func SetCategory(categoryIndex:String){
+        self.appDelegate.itemList = [Item]()//아이템리스트 생성
+        
+        //배너 불러오기
+        Alamofire.request("http://hjknas.asuscomm.com:3000/banner/list").responseSwiftyJSON { dataResponse in
             print(dataResponse.request!)
             if dataResponse != nil{
-                self.appDelegate.itemList = MakeItemList(Json: (dataResponse.value)!)
+                self.appDelegate.itemList.append(MakeBannerList(Json: dataResponse.value!))
+            }
+        }
+        
+        //카테고리 URL구분
+        var urlStr = ""
+        if categoryIndex == ""{
+            urlStr = "http://hjknas.asuscomm.com:3000/item/list"
+        }
+        else{
+            categoryName = categoryIndex
+            urlStr = "http://hjknas.asuscomm.com:3000/item/sameCategory?categoryIndex=" + categoryIndex
+        }
+        
+        //URL불러오기
+        Alamofire.request(urlStr).responseSwiftyJSON { dataResponse in
+            if dataResponse.request != nil{
+                self.appDelegate.itemList = MakeItemList(itemList: self.appDelegate.itemList, Json: (dataResponse.value)!)
             }
         }
         sleep(2)
@@ -114,15 +140,24 @@ class ItemListViewController: UITableViewController {
             isFirst=false
             self.tableView.reloadData()
         }
-        
-        Alamofire.request("http://hjknas.asuscomm.com:2323/itemlist2.php").responseSwiftyJSON { dataResponse in
+        if categoryName == ""{
+        Alamofire.request("http://hjknas.asuscomm.com:3000/item/list").responseSwiftyJSON { dataResponse in
             self.appDelegate.itemList = AddItemList(Json: dataResponse.value!, list: &self.appDelegate.itemList)
             print(dataResponse.request!)
             self.tableView.reloadData()
         }
+        }
+        else{
+            Alamofire.request("http://hjknas.asuscomm.com:3000/item/sameCategory?categoryIndex="+categoryName).responseSwiftyJSON { dataResponse in
+                if dataResponse.request != nil{
+                self.appDelegate.itemList = AddItemList(Json: dataResponse.value!, list: &self.appDelegate.itemList)
+                self.tableView.reloadData()
+                }
+        }
+        
+    }
         loading=false
     }
-    
     
     func MakeCell(index:Int) -> ItemListBigCell{
         let row = self.appDelegate.itemList[index]
@@ -170,53 +205,4 @@ class ItemListViewController: UITableViewController {
         
         return cell
     }
-    
-    @IBOutlet weak var myScrollView: UIScrollView!
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row > 0 {
-            return 250//높이 설정
-        }
-        else {
-            return 100
-        }
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool){
-        self.tableView.reloadData()
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
-        
-        let lastItem = self.appDelegate.itemList.count-1
-        
-        if lastItem<=0 || loading { return }
-        
-        if(indexPath.row >= itemLoadCount-1 && indexPath.row == lastItem){
-            loading=true
-            loadMoreData()
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "ProductDetail", bundle: nil)
-        let nextView:ProductDetailViewController = storyboard.instantiateInitialViewController() as! ProductDetailViewController
-        nextView.index = indexPath.row
-        self.present(nextView, animated: true, completion: nil)
-    }
-    
-    func loadMoreData(){
-        if isFirst{
-            isFirst=false
-            self.tableView.reloadData()
-        }
-        
-        Alamofire.request("http://hjknas.asuscomm.com:2323/itemlist2.php").responseSwiftyJSON { dataResponse in
-            self.appDelegate.itemList = AddItemList(Json: dataResponse.value!, list: &self.appDelegate.itemList)
-            print(dataResponse.request!)
-            self.tableView.reloadData()
-        }
-        loading=false
-    }
-    
 }
