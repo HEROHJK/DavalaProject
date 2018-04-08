@@ -12,39 +12,39 @@ import Alamofire_SwiftyJSON
 import SwiftyJSON
 
 
-/*
- * 리스트를 처음 만들때.
- * 처음만들때는 배너를 가져온 후 먼저 첫번째에 배너목록을 집어넣고, 그 후에 아이템 목록을 집어넣는다
- */
-func MakeItemList(Json: JSON) -> [Item]{
-    var itemList:[Item] = [Item]()
+func MakeBannerList(Json:JSON)->Item{
+    var bannerItem:Item = Item()
     
-    let banner = Json["BannerList"]
-    
-    itemList.append(Item())
-    
-    for json in banner{
+    for json in Json{
         let data = json.1.dictionary!
         
-        itemList[0].BannerList.append(Banner(
+        bannerItem.BannerList.append(Banner(
             imageURL:(data["url"]?.stringValue)!,
             subject: (data["subject"]?.stringValue)!
         ))
     }
     
+    return bannerItem
+}
+
+/*
+ * 리스트를 처음 만들때.
+ * 처음만들때는 배너를 가져온 후 먼저 첫번째에 배너목록을 집어넣고, 그 후에 아이템 목록을 집어넣는다
+ */
+func MakeItemList(itemList: [Item], Json: JSON) -> [Item]{
+    var newItemList:[Item] = itemList
     
-    let newJson = Json["ItemList2"]
     var count = 0
-    for json in newJson{
-        let data = json.1.dictionary!
+    for json in Json{
+        let data = json.1
         
-        itemList.append(Item(
-            imageURL: (data["url"]?.stringValue)!,
-            productName: (data["name"]?.stringValue)!,
-            price: (data["price"]?.stringValue)!.DeleteDot,
-            discount: (data["discount"]?.stringValue)!,
-            percentage: (data["percentage"]?.stringValue)!,
-            discountPrice : (data["discountPrice"]?.stringValue)!.DeleteDot
+        newItemList.append(Item(
+            imageURL: (data["URL"].stringValue),
+            productName: (data["name"].stringValue),
+            price: (data["price"].stringValue).DeleteDot,
+            discount: (data["discount"].stringValue),
+            percentage: (data["percentage"].stringValue),
+            discountPrice : (data["discountPrice"].stringValue).DeleteDot
         ))
         count+=1
         if count >= itemLoadCount {
@@ -52,7 +52,7 @@ func MakeItemList(Json: JSON) -> [Item]{
         }
     }
     
-    return itemList
+    return newItemList
 }
 
 /*
@@ -61,7 +61,7 @@ func MakeItemList(Json: JSON) -> [Item]{
 func AddItemList(Json: JSON, list: inout [Item]) -> [Item]{
     var itemList = list
     
-    let newJson = Json["ItemList2"]
+    let newJson = Json
     let maxCount = list.count+itemLoadCount//최대카운트는 현재 개수 + 지정한 개수단위를 더한다
     var currentCount = 0
     
@@ -69,15 +69,15 @@ func AddItemList(Json: JSON, list: inout [Item]) -> [Item]{
         if currentCount++ <= list.count{
             continue//매번 0번부터 끝까지 호출하므로, 0번부터 현재까지는 생략.(안하면 중복추가됨)
         }
-        let data = json.1.dictionary!
+        let data = json.1
         
         itemList.append(Item(
-            imageURL: (data["url"]?.stringValue)!,
-            productName: (data["name"]?.stringValue)!,
-            price: (data["price"]?.stringValue)!.DeleteDot,
-            discount: (data["discount"]?.stringValue)!,
-            percentage: (data["percentage"]?.stringValue)!,
-            discountPrice : (data["discountPrice"]?.stringValue)!.DeleteDot
+            imageURL: (data["URL"].stringValue),
+            productName: (data["name"].stringValue),
+            price: (data["price"].stringValue).DeleteDot,
+            discount: (data["discount"].stringValue),
+            percentage: (data["percentage"].stringValue),
+            discountPrice : (data["discountPrice"].stringValue).DeleteDot
         ))
         
         if currentCount >= maxCount{

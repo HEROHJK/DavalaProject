@@ -21,6 +21,8 @@ class ItemListViewController: UITableViewController {
     
     var isFirst:Bool = true
     
+    var categoryName = ""
+    
     //MARK: UIViewController
     
     override func viewDidLoad() {
@@ -31,13 +33,37 @@ class ItemListViewController: UITableViewController {
         refc.addTarget(self, action: #selector(refresh), for: .valueChanged)
         self.tableView.refreshControl = refc
         
-        Alamofire.request("http://hjknas.asuscomm.com:2323/itemlist2.php").responseSwiftyJSON { dataResponse in
+    }
+    
+    func SetCategory(categoryIndex:String){
+        self.appDelegate.itemList = [Item]()//아이템리스트 생성
+        
+        //배너 불러오기
+        Alamofire.request("http://hjknas.asuscomm.com:3000/banner/list").responseSwiftyJSON { dataResponse in
             print(dataResponse.request!)
-            self.appDelegate.itemList = MakeItemList(Json: dataResponse.value!)
+            if dataResponse != nil{
+                self.appDelegate.itemList.append(MakeBannerList(Json: dataResponse.value!))
+            }
+        }
+        
+        //카테고리 URL구분
+        var urlStr = ""
+        if categoryIndex == ""{
+            urlStr = "http://hjknas.asuscomm.com:3000/item/list"
+        }
+        else{
+            categoryName = categoryIndex
+            urlStr = "http://hjknas.asuscomm.com:3000/item/sameCategory?categoryIndex=" + categoryIndex
+        }
+        
+        //URL불러오기
+        Alamofire.request(urlStr).responseSwiftyJSON { dataResponse in
+            if dataResponse.request != nil{
+                self.appDelegate.itemList = MakeItemList(itemList: self.appDelegate.itemList, Json: (dataResponse.value)!)
+            }
         }
         sleep(2)
         loadMoreData()
-        
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -114,15 +140,24 @@ class ItemListViewController: UITableViewController {
             isFirst=false
             self.tableView.reloadData()
         }
-        
-        Alamofire.request("http://hjknas.asuscomm.com:2323/itemlist2.php").responseSwiftyJSON { dataResponse in
+        if categoryName == ""{
+        Alamofire.request("http://hjknas.asuscomm.com:3000/item/list").responseSwiftyJSON { dataResponse in
             self.appDelegate.itemList = AddItemList(Json: dataResponse.value!, list: &self.appDelegate.itemList)
             print(dataResponse.request!)
             self.tableView.reloadData()
         }
+        }
+        else{
+            Alamofire.request("http://hjknas.asuscomm.com:3000/item/sameCategory?categoryIndex="+categoryName).responseSwiftyJSON { dataResponse in
+                if dataResponse.request != nil{
+                self.appDelegate.itemList = AddItemList(Json: dataResponse.value!, list: &self.appDelegate.itemList)
+                self.tableView.reloadData()
+                }
+        }
+        
+    }
         loading=false
     }
-    
     
     func MakeCell(index:Int) -> ItemListBigCell{
         let row = self.appDelegate.itemList[index]
@@ -170,6 +205,4 @@ class ItemListViewController: UITableViewController {
         
         return cell
     }
-    
-    
 }

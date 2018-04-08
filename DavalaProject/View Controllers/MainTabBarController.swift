@@ -30,6 +30,8 @@ class MainTabBarController: UITabBarController {
         let itemListNavigation:UINavigationController = UINavigationController.init(rootViewController: itemListViewController)
         itemListNavigation.tabBarItem.image = UIImage.init(named: "tab_bottom_home.png")
         
+        itemListViewController.SetCategory(categoryIndex: "")
+        
         let categoryListStoryboard: UIStoryboard = UIStoryboard(name: "CategoryList", bundle: nil)
         let categoryListViewController:CategoryListViewController = categoryListStoryboard.instantiateInitialViewController() as!  CategoryListViewController
         let categoryListNavigation:UINavigationController = UINavigationController.init(rootViewController: categoryListViewController)

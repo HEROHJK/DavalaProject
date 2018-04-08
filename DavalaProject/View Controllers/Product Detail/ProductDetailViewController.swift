@@ -9,10 +9,8 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     var viewModel: ProductDetailViewModel = ProductDetailViewModel()
-    var product:Product!
-    var index:Int!
+    var index: Int = -1
     
     override func viewDidLoad() {
         print("ProductDetailViewController viewDidLoad")
@@ -33,6 +31,4 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         }
         //WebServiceManager.sharedInstance.getBannerList(success: { (data: Dictionary) in debugPrint(data) }, fail: { (error: Error?) in print(error) })
     }
-    
-    
 }
