@@ -14,6 +14,8 @@ class ReviewFeedViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var listCtrl: ReviewFeedListController!
     
+    //MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,11 +32,21 @@ class ReviewFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard: UIStoryboard = UIStoryboard(name: "ReviewFeedDetail", bundle: nil)
         let nextView = storyboard.instantiateInitialViewController()
         
-        self.present(nextView!, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextView!, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -12,6 +12,7 @@ import Alamofire_SwiftyJSON
 
 class ItemListViewController: UITableViewController {
     
+    @IBOutlet weak var myScrollView: UIScrollView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var refc: UIRefreshControl!
@@ -19,6 +20,8 @@ class ItemListViewController: UITableViewController {
     var loading:Bool = false
     
     var isFirst:Bool = true
+    
+    //MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +40,26 @@ class ItemListViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        self.tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     @objc func refresh(sender: AnyObject){
         loadMoreData()
         refc.endRefreshing()
         loading=false
     }
     
+    //MARK: TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection
-section: Int)->Int{
+        section: Int)->Int{
         let count = self.appDelegate.itemList.count
         
         return count
@@ -62,6 +77,52 @@ section: Int)->Int{
             return MakeCell(index: indexPath.row)
         }
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row > 0 {
+            return 250//높이 설정
+        }
+        else {
+            return 100
+        }
+    }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
+        
+        let lastItem = self.appDelegate.itemList.count-1
+        
+        if lastItem<=0 || loading { return }
+        
+        if(indexPath.row >= itemLoadCount-1 && indexPath.row == lastItem){
+            loading=true
+            loadMoreData()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "ProductDetail", bundle: nil)
+        let nextView:ProductDetailViewController = storyboard.instantiateInitialViewController() as!  ProductDetailViewController
+        nextView.index = indexPath.row
+        nextView.hidesBottomBarWhenPushed = true;
+        
+        self.navigationController?.pushViewController(nextView, animated: true)
+    }
+    
+    func loadMoreData(){
+        if isFirst{
+            isFirst=false
+            self.tableView.reloadData()
+        }
+        
+        Alamofire.request("http://hjknas.asuscomm.com:2323/itemlist2.php").responseSwiftyJSON { dataResponse in
+            self.appDelegate.itemList = AddItemList(Json: dataResponse.value!, list: &self.appDelegate.itemList)
+            print(dataResponse.request!)
+            self.tableView.reloadData()
+        }
+        loading=false
+    }
+    
     
     func MakeCell(index:Int) -> ItemListBigCell{
         let row = self.appDelegate.itemList[index]
@@ -110,52 +171,5 @@ section: Int)->Int{
         return cell
     }
     
-    @IBOutlet weak var myScrollView: UIScrollView!
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row > 0 {
-            return 250//높이 설정
-        }
-        else {
-            return 100
-        }
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool){
-        self.tableView.reloadData()
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
-        
-        let lastItem = self.appDelegate.itemList.count-1
-        
-        if lastItem<=0 || loading { return }
-        
-        if(indexPath.row >= itemLoadCount-1 && indexPath.row == lastItem){
-            loading=true
-            loadMoreData()
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "ProductDetail", bundle: nil)
-        let nextView = storyboard.instantiateInitialViewController()
-        
-        self.present(nextView!, animated: true, completion: nil)
-    }
-    
-    func loadMoreData(){
-        if isFirst{
-            isFirst=false
-            self.tableView.reloadData()
-        }
-        
-        Alamofire.request("http://hjknas.asuscomm.com:2323/itemlist2.php").responseSwiftyJSON { dataResponse in
-            self.appDelegate.itemList = AddItemList(Json: dataResponse.value!, list: &self.appDelegate.itemList)
-            print(dataResponse.request!)
-            self.tableView.reloadData()
-        }
-        loading=false
-    }
     
 }
