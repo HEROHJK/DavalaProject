@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yIa-IY-HCd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yIa-IY-HCd">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Product Detail View Controller-->
+        <!--상품상세-->
         <scene sceneID="Nvb-8r-LsT">
             <objects>
                 <viewController storyboardIdentifier="ProductDetail" id="yIa-IY-HCd" customClass="ProductDetailViewController" customModule="DavalaProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -430,7 +430,7 @@
                                         <rect key="frame" x="0.0" y="1154" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fTH-Gj-TUo" id="391-IK-FIm">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배송/상품정보 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sit-ZO-rgH">
@@ -477,13 +477,13 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[클럽크리오] UPTo51% 3월 한정" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grM-NF-cmV">
-                                                                        <rect key="frame" x="0.0" y="108" width="120" height="29"/>
+                                                                        <rect key="frame" x="0.0" y="108.33333333333333" width="120" height="28.666666666666671"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YVU-nI-iPa">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="103"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="103.33333333333333"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
@@ -566,6 +566,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ldC-5L-crX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="상품상세" id="U4m-md-Q0l">
+                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="K2s-LU-oVC"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5PL-YE-ZZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

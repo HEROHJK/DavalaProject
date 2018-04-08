@@ -16,9 +16,19 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         print("ProductDetailViewController viewDidLoad")
         super.viewDidLoad()
         
+        self.index = 0
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        var array:NSMutableArray = NSMutableArray()
+        var error:Error?
+        WebServiceManager.sharedInstance.getBannerList(success: { (array) in
+            
+        }) { (error) in
+            
+        }
+        //WebServiceManager.sharedInstance.getBannerList(success: { (data: Dictionary) in debugPrint(data) }, fail: { (error: Error?) in print(error) })
     }
 }

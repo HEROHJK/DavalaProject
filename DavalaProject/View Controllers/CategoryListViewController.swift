@@ -15,6 +15,8 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet var categoryTable: UITableView!
     
+    //MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +28,16 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.categoryTable .reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
