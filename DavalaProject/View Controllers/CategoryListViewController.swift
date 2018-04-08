@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 let CELL_IDENTIFIER: String = "cell_identifier"
-let ITEM_LIST_VIEW_CONTROLLER: String = "itemListViewController"
+let ITEM_LIST_VIEW_CONTROLLER: String = "ItemListViewController"
 
 class CategoryListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -68,7 +68,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
             let privateViewController:ItemListViewController = itemListStoryBoard.instantiateViewController(withIdentifier: ITEM_LIST_VIEW_CONTROLLER) as! ItemListViewController
             if privateViewController != nil {
                 self.startLoading()
-//                privateViewController.SetCategory(categoryIndex:item.index)
+                privateViewController.SetCategory(categoryIndex:String(item.index))
                 self.navigationController?.pushViewController(privateViewController, animated: true)
             }
         } else {
