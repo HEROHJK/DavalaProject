@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XCQ-Jb-CIT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XCQ-Jb-CIT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,19 +26,39 @@
                                     <outlet property="delegate" destination="XCQ-Jb-CIT" id="kAE-nK-IRl"/>
                                 </connections>
                             </tableView>
+                            <view userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlQ-HB-9Uf" userLabel="Loading Page">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="i4d-2P-Uzg" userLabel="Activity Indicator">
+                                        <rect key="frame" x="169" y="305" width="37" height="37"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="i4d-2P-Uzg" firstAttribute="centerY" secondItem="KlQ-HB-9Uf" secondAttribute="centerY" id="DMQ-J0-Pdr"/>
+                                    <constraint firstItem="i4d-2P-Uzg" firstAttribute="centerX" secondItem="KlQ-HB-9Uf" secondAttribute="centerX" id="ubE-gO-CWD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96859331800000004" blue="0.45076402989999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="RgF-ar-09i" firstAttribute="trailing" secondItem="8oI-dh-4Hb" secondAttribute="trailing" id="A6V-d3-km1"/>
+                            <constraint firstItem="RgF-ar-09i" firstAttribute="trailing" secondItem="KlQ-HB-9Uf" secondAttribute="trailing" id="Ef9-G8-H6S"/>
+                            <constraint firstItem="KlQ-HB-9Uf" firstAttribute="top" secondItem="RgF-ar-09i" secondAttribute="top" id="PEe-LW-mM6"/>
                             <constraint firstItem="8oI-dh-4Hb" firstAttribute="leading" secondItem="RgF-ar-09i" secondAttribute="leading" id="UOt-Eb-h2R"/>
+                            <constraint firstItem="RgF-ar-09i" firstAttribute="bottom" secondItem="KlQ-HB-9Uf" secondAttribute="bottom" id="asj-PJ-gfJ"/>
                             <constraint firstItem="RgF-ar-09i" firstAttribute="bottom" secondItem="8oI-dh-4Hb" secondAttribute="bottom" id="pUe-LD-C19"/>
+                            <constraint firstItem="KlQ-HB-9Uf" firstAttribute="leading" secondItem="RgF-ar-09i" secondAttribute="leading" id="pa3-I1-yer"/>
                             <constraint firstItem="8oI-dh-4Hb" firstAttribute="top" secondItem="RgF-ar-09i" secondAttribute="top" id="sdf-hP-ep2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RgF-ar-09i"/>
                     </view>
                     <navigationItem key="navigationItem" id="y27-xq-ojK"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="i4d-2P-Uzg" id="LXH-oy-MW7"/>
                         <outlet property="categoryTable" destination="8oI-dh-4Hb" id="RQD-Fr-Azw"/>
+                        <outlet property="loadingView" destination="KlQ-HB-9Uf" id="g8w-rE-BVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYJ-At-ffw" userLabel="First Responder" sceneMemberID="firstResponder"/>

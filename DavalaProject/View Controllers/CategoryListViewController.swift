@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 
 let CELL_IDENTIFIER: String = "cell_identifier"
+let ITEM_LIST_VIEW_CONTROLLER: String = "itemListViewController"
 
 class CategoryListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var categoryTable: UITableView!
+    @IBOutlet var loadingView: UIView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     //MARK: UIViewController
     
@@ -33,11 +36,17 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.stopLoading()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.stopLoading()
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,8 +60,21 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         let row: Int = indexPath.row
         var cateroryList: Array = AppDelegate().sharedAppDelegate().categoryListMgr .getDisplayedCategoryList()
         let item: CategoryListItem = cateroryList[row] as! CategoryListItem
-        AppDelegate().sharedAppDelegate().categoryListMgr .selectItemWithCategoryIndex(categoryIndex: item.index)
-        tableView.reloadData()
+        
+        let subcategoryItems: Array = AppDelegate().sharedAppDelegate().categoryListMgr.getItemsWithSubCategoryIndex(categoryIndex: item.index)
+        
+        if subcategoryItems.count == 0 {
+            let itemListStoryBoard: UIStoryboard = UIStoryboard(name: "ItemList", bundle: nil)
+            let privateViewController:ItemListViewController = itemListStoryBoard.instantiateViewController(withIdentifier: ITEM_LIST_VIEW_CONTROLLER) as! ItemListViewController
+            if privateViewController != nil {
+                self.startLoading()
+//                privateViewController.SetCategory(categoryIndex:item.index)
+                self.navigationController?.pushViewController(privateViewController, animated: true)
+            }
+        } else {
+            let temp: Bool = AppDelegate().sharedAppDelegate().categoryListMgr .selectItemWithCategoryIndex(categoryIndex: item.index)
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,6 +118,18 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     
     @objc func onReceivedFinishedParsing() {
         self.categoryTable .reloadData()
+    }
+    
+    func stopLoading() {
+        self.loadingView.isHidden = true
+        self.activityIndicator.isHidden = true
+        self.activityIndicator.stopAnimating()
+    }
+    
+    func startLoading() {
+        self.loadingView.isHidden = false
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
     }
 }
 
